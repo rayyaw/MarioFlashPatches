@@ -1,0 +1,88 @@
+# Add savestate presets
+# Also add the DS8___ bar
+add frame_1/DoAction.as 994
+if(Key.isDown(49) && Key.isDown(16))
+      {
+         ex_value = "1";
+         _root.saved_suit = 2;
+         _root.saved_x = 40;
+         _root.saved_y = 160;
+         _root.saved_level = "koopa castle";
+      }
+      if(Key.isDown(50) && Key.isDown(16))
+      {
+         ex_value = "2";
+         _root.saved_suit = 0;
+         _root.saved_x = 390;
+         _root.saved_y = 160;
+         _root.saved_level = "koopa castle2";
+      }
+      if(Key.isDown(51) && Key.isDown(16))
+      {
+         ex_value = "3";
+         _root.saved_suit = 0;
+         _root.saved_x = 1390;
+         _root.saved_y = 160;
+         _root.saved_level = "koopa castle";
+      }
+      if(Key.isDown(52) && Key.isDown(16))
+      {
+         ex_value = "4";
+         _root.saved_suit = 0;
+         _root.saved_x = 1970;
+         _root.saved_y = 120;
+         _root.saved_level = "koopa castle2";
+      }
+      if(Key.isDown(53) && Key.isDown(16))
+      {
+         ex_value = "5";
+         _root.saved_suit = 0;
+         _root.saved_x = 2870;
+         _root.saved_y = 160;
+         _root.saved_level = "koopa castle";
+      }
+      if(Key.isDown(54) && Key.isDown(16))
+      {
+         ex_value = "6";
+         _root.saved_suit = 2;
+         _root.saved_x = 3390;
+         _root.saved_y = 180;
+         _root.saved_level = "koopa castle2";
+      }
+      if(Key.isDown(55) && Key.isDown(16))
+      {
+         ex_value = "7";
+         _root.saved_suit = 2;
+         _root.saved_x = 4170;
+         _root.saved_y = 180;
+         _root.saved_level = "koopa castle";
+      }
+      if(Key.isDown(56) && Key.isDown(16))
+      {
+         ex_value = "8";
+         _root.saved_suit = 0;
+         _root.saved_x = 100;
+         _root.saved_y = 80;
+         _root.saved_level = "boss2";
+      }
+      if(Key.isDown(57) && Key.isDown(16))
+      {
+         ex_value = "9";
+         _root.saved_suit = 2;
+         _root.saved_x = 100;
+         _root.saved_y = 80;
+         _root.saved_level = "boss1";
+      }
+      if(Key.isDown(48) && Key.isDown(16))
+      {
+         ex_value = "0";
+         _root.saved_suit = 0;
+         _root.saved_x = 30;
+         _root.saved_y = 80;
+         _root.saved_level = "bonus1";
+      }
+end-patch
+
+add frame_1/DoAction.as end
+ex_value = "_";
+end-patch

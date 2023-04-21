@@ -1,0 +1,10 @@
+# SMF Fullgame Hack modifications
+noncheat/input-display-as-score.patch
+noncheat/track-speedrun-time.patch
+noncheat/add-build-number.patch
+
+# Fullgame hack only
+noncheat/remove-cheat-menu.patch
+
+# This line must be last
+noncheat/pig.patch

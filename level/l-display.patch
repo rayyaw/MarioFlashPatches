@@ -1,0 +1,3 @@
+add frame_1/DoAction.as 994
+aff("L", 1, this.hud.life);
+end-patch

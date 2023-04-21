@@ -1,0 +1,19 @@
+add frame_1/DoAction.as 994
+      if(Key.isDown(90))
+      {
+         if(z_pressed == false)
+         {
+            _root.suit = "smallsuit";
+            dead();
+         }
+         z_pressed = true;
+      }
+      else
+      {
+         z_pressed = false;
+      }
+end-patch
+
+add frame_1/DoAction.as end
+z_pressed = false
+end-patch

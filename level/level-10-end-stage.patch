@@ -1,0 +1,7 @@
+# On Level 10 clear, don't reset the game
+
+remove DefineSprite_1109/frame_1/DoAction.as 54-54
+
+add DefineSprite_1109/frame_1/DoAction.as 53
+_root.Level_Clear(1);
+end-patch

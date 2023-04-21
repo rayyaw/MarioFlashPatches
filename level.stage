@@ -1,0 +1,15 @@
+# SMF IL Hack modifications
+noncheat/input-display-as-score.patch 
+noncheat/track-speedrun-time.patch
+noncheat/add-build-number.patch
+
+# Files common to the IL and Cheat hacks
+level/die-gain-lives.patch
+level/z-to-die.patch
+level/level-10-end-stage.patch
+
+# Exclusive files
+level/l-display.patch
+
+# This line must be last
+noncheat/pig.patch

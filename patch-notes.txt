@@ -1,0 +1,43 @@
+TODO:
+- Make the fullgame timer authoritative
+
+Build 8 patch notes:
+- Minor code improvements (there is only one build number and it can be updated dynamically)
+
+Build 5/6/7 patch notes:
+- The IL timer is patched and authoritative
+- The fullgame timer is accurate within 1 frame
+
+SMF CE build 4 patch notes
+Fullgame feature list:
+- Score is now input display
+- Name is IL Time by default. shift+Q = score, shift+W = IL time, shift+E = full game time
+- Bowser reads out the final time of the run
+- Added IL and full game timers
+
+- PIG is patched
+- Cheats menu is patched
+
+IL feature list:
+All of the above, minus:
+- Cheats menu is patched
+
+and with the new additions of:
+- Top right of the screen shows an L
+- Press Z to die
+- Dying increases your life count
+- Finishing level 10 doesn't send you back to the main menu
+
+Cheat feature list:
+All of the above, plus:
+- Top right of the screen shows a C
+- Coin counter is pixel mod 6
+- Lives counter is pixel mod 20
+- Use the number keys (w/o shift) to change Mario's powerup state, and 5 to teleport to the mouse
+- Add savestates (save/load) with ` and shift+` (location AND powerup AND level)
+- Load custom savestate presets with shift+(1-9 or 0)
+- shift+R/shift+T switches between DS8___ display and input viewer
+
+TODO:
+- Option to show DS8___ menu (this should be the default) but allow other display modes
+- Backspace reloads a savestate on death

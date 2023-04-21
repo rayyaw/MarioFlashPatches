@@ -1,0 +1,56 @@
+# Add savestates to SMF
+add frame_1/DoAction.as 994
+      if(Key.isDown(192) && Key.isDown(16) && backtick_pressed == false)
+      {
+         if(_root.suit == "smallsuit")
+         {
+            saved_suit = 0;
+         }
+         else if(_root.suit == "normalsuit")
+         {
+            _root.saved_suit = 1;
+         }
+         else
+         {
+            _root.saved_suit = 2;
+         }
+         _root.saved_x = player._x - this.level._x;
+         _root.saved_y = player._y;
+         _root.saved_level = _root.current_level;
+         ex_value = "C";
+      }
+      else if(Key.isDown(192) && backtick_pressed == false)
+      {
+         enterpipes(_root.saved_level,_root.saved_x,_root.saved_y,0,1,4800,true);
+         if(_root.saved_suit == 0)
+         {
+            setsmall();
+         }
+         else if(_root.saved_suit == 1)
+         {
+            setsmall();
+            setbig();
+         }
+         else
+         {
+            setbig();
+            fireon();
+         }
+      }
+      if(Key.isDown(192))
+      {
+         backtick_pressed = true;
+      }
+      else
+      {
+         backtick_pressed = false;
+      }
+end-patch
+
+add frame_1/DoAction.as end
+backtick_pressed = false;
+_root.saved_level = "level 6";
+_root.saved_x = 0;
+_root.saved_y = 0;
+_root.saved_suit = 0;
+end-patch

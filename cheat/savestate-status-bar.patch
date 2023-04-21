@@ -1,0 +1,24 @@
+# Add in the savestate status bar, the one that says DS8___
+# Requires the "load state on death", "savestate", "savestate preset" and "input display as score" patches
+# Should be applied BEFORE the "load state on death" patch
+
+add frame_1/DoAction.as 994
+var savestate_status = death_pipe + "S" + ex_value + "___"
+
+if (!input_display) {
+aff(savestate_status, 6, this.hud.ptext);
+}
+
+if(Key.isDown(82) && Key.isDown(16))
+   {
+      input_display = true;
+   }
+   if(Key.isDown(84) && Key.isDown(16))
+   {
+      input_display = false;
+   }
+end-patch
+
+add frame_1/DoAction.as end
+input_display = false;
+end-patch

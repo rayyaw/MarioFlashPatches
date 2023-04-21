@@ -1,0 +1,52 @@
+# If D mode is on, deaths will reset you to the savestate
+# Requires the savestate patch to run
+# This should be the last patch applied (with the exception of the PIG patch)
+
+add frame_1/DoAction.as 994
+      if(Key.isDown(8) && backspace_pressed == false)
+      {
+         if(death_pipe == "_")
+         {
+            death_pipe = "D";
+         }
+         else
+         {
+            death_pipe = "_";
+         }
+      }
+      if(Key.isDown(8))
+      {
+         backspace_pressed = true;
+      }
+      else
+      {
+         backspace_pressed = false;
+      }
+end-patch
+
+add frame_1/DoAction.as end
+backspace_pressed = false;
+death_pipe = "_";
+end-patch
+
+add frame_1/DoAction.as 469
+   if(death_pipe != "_")
+   {
+      enterpipes(_root.saved_level,_root.saved_x,_root.saved_y,0,1,4800,true);
+      if(_root.saved_suit == 0)
+      {
+         setsmall();
+      }
+      else if(_root.saved_suit == 1)
+      {
+         setsmall();
+         setbig();
+      }
+      else
+      {
+         setbig();
+         fireon();
+      }
+      return undefined;
+   }
+end-patch

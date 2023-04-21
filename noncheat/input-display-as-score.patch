@@ -1,0 +1,54 @@
+# Super Mario Flash Patch - Replace the player's score with an input display and draw it
+# Should be applied before any patches that modify functions before onEnterFrame
+
+add frame_1/DoAction.as 994
+   if(Key.isDown(32))
+   {
+      this.space = "S";
+   }
+   else
+   {
+      this.space = "_";
+   }
+   if(Key.isDown(38))
+   {
+      this.u = "U";
+   }
+   else
+   {
+      this.u = "_";
+   }
+   if(Key.isDown(40))
+   {
+      this.d = "D";
+   }
+   else
+   {
+      this.d = "_";
+   }
+   if(Key.isDown(37))
+   {
+      this.l = "L";
+   }
+   else
+   {
+      this.l = "_";
+   }
+   if(Key.isDown(39))
+   {
+      this.r = "R";
+   }
+   else
+   {
+      this.r = "_";
+   }
+   var _loc3_ = _root.build_number + this.space + this.u + this.d + this.l + this.r;
+   
+   if (input_display) {
+    aff(_loc3_,_loc3_.length,this.hud.ptext);
+    }
+end-patch
+
+add frame_1/DoAction.as end
+input_display = true;
+end-patch

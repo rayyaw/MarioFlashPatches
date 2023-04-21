@@ -1,0 +1,4 @@
+# Remove the functionality of the cheat menu in SMF. Only intended for noncheat hacks.
+remove DefineSprite_192/frame_5/DoAction.as 21-40
+remove DefineSprite_192/frame_5/DoAction.as 13-17
+

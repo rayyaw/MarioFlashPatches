@@ -1,0 +1,26 @@
+# Select your powerup state by pressing 1-4, and teleport to the mouse by pressing 5.
+add frame_1/DoAction.as 994
+	  if(Key.isDown(49) && !Key.isDown(16))
+      {
+         _root.setsmall();
+      }
+      if(Key.isDown(50) && !Key.isDown(16))
+      {
+         _root.setsmall();
+         _root.setbig();
+      }
+      if(Key.isDown(51) && !Key.isDown(16))
+      {
+         _root.setbig();
+         _root.fireon();
+      }
+      if(Key.isDown(52) && !Key.isDown(16))
+      {
+         _root.starinv();
+      }
+      if(Key.isDown(53) && !Key.isDown(16))
+      {
+         _root.player._x = _root._xmouse;
+         _root.player._y = _root._ymouse;
+      }
+end-patch

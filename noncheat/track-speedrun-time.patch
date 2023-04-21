@@ -1,0 +1,178 @@
+# SMF Patch - Track the fullgame and IL times, and display them in the name and end screen
+# Should be applied after any patches that only modify onEnterFrame.
+
+# FIXME - L10 needs -2f of offset
+# Also fullgame offset = 1? 1 per level? Something else?
+add DefineSprite_1077_Level 1/frame_1/DoAction.as 3
+// this lines up the line numbers
+_root.inclevel = true;
+end-patch
+
+add DefineSprite_1077_Level 1/frame_1/DoAction.as 9
+_root.inclevel = false;
+end-patch
+
+add DefineSprite_1078_Level 2/frame_1/DoAction.as 3
+_root.leveltime2 = 1;
+_root.inclevel = true;
+end-patch
+
+add DefineSprite_1078_Level 2/frame_1/DoAction.as 9
+_root.inclevel = false;
+end-patch
+
+add DefineSprite_1079_Level 3/frame_1/DoAction.as 3
+_root.leveltime2 = 1;
+_root.inclevel = true;
+end-patch
+
+add DefineSprite_1079_Level 3/frame_1/DoAction.as 9
+_root.inclevel = false;
+end-patch
+
+add DefineSprite_1080_level 4/frame_1/DoAction.as 3
+_root.leveltime2 = 1;
+_root.inclevel = true;
+end-patch
+
+add DefineSprite_1080_level 4/frame_1/DoAction.as 9
+_root.inclevel = false;
+end-patch
+
+add DefineSprite_1082_level 6/frame_1/DoAction.as 3
+_root.leveltime2 = 1;
+_root.inclevel = true;
+end-patch
+
+add DefineSprite_1082_level 6/frame_1/DoAction.as 9
+_root.inclevel = false;
+end-patch
+
+add DefineSprite_1083_Level 9/frame_1/DoAction.as 3
+_root.leveltime2 = 1;
+_root.inclevel = true;
+end-patch
+
+add DefineSprite_1083_Level 9/frame_1/DoAction.as 10
+_root.inclevel = false;
+end-patch
+
+add DefineSprite_1057_Level 8/frame_1/DoAction.as 3
+_root.inclevel = true;
+end-patch
+
+add DefineSprite_1057_Level 8/frame_1/DoAction.as 9
+_root.inclevel = false;
+end-patch
+
+add DefineSprite_1076_Level 7/frame_1/DoAction.as 3
+_root.leveltime2 = 1;
+_root.inclevel = true;
+end-patch
+
+add DefineSprite_1076_Level 7/frame_1/DoAction.as 10
+_root.inclevel = false;
+end-patch
+
+add DefineSprite_1081_level 5/frame_1/DoAction.as 3
+_root.leveltime2 = 1;
+_root.inclevel = true;
+end-patch
+
+# Can't use a _root.hasSet flag instead unfortunately - what if we do many ILs without resetting?
+add DefineSprite_1084_koopa castle/frame_1/DoAction.as 3
+//_root.leveltime2 = 1;
+if (_root.leveltime2 == 1) {
+	_root.leveltime2 -= 2;
+}
+_root.inclevel = true;
+end-patch
+
+# Handle the IL timer in every level
+add DefineSprite_976_Fade_in(1)/frame_27/DoAction.as 0
+_root.inclevel = false;
+_root.leveltime2 = 1;
+end-patch
+
+add DefineSprite_1103/frame_1/DoAction.as 15
+_root.inclevel = false;
+end-patch
+
+# Game time setup
+add DefineSprite_192/frame_6/DoAction.as 36
+_root.gametime = 0;
+_root.starttime = new Date();
+end-patch
+
+# Final time after Bowser
+remove DefineSprite_1109/frame_1/DoAction.as 3-5
+
+add DefineSprite_1109/frame_1/DoAction.as 2
+text1="";
+text2="Hack made by RileyTech &&Playtesting by upelly &&Build Number " + _root.build_number + " && Made with Patches";
+text3="Hack made by RileyTech &&Build Number " + _root.build_number + " && Made with Patches";
+end-patch
+
+add DefineSprite_1109/frame_1/DoAction.as 31
+_root.endtime = new Date();
+var _loc4_ = ((_root.endtime.valueOf() - _root.starttime.valueOf()) / 1000);
+_loc4_ = _root.gametime / 26; //Math.floor((_loc4_-0.0384615384615)*26) / 26; // subtract a frame, then round down to the frame
+var _loc5_ = Math.floor(_loc4_ / 60);
+_loc4_ -= _loc5_ * 60;
+var padded_string = String(_loc4_);
+if (padded_string.charAt(1) == '.') {
+	padded_string = "0" + padded_string;
+}
+_root.text1 = "Full game time: " + String(_loc5_) + ":" + padded_string + " &&IL Time: " + String(_root.leveltime2) + "&&Game Framecount: " + String(_root.gametime);
+_root.curtext = _root.text1;
+text = _root.text1;
+end-patch
+
+# Frame 1 timer setups
+# FIXME - Remove starttime and endtime if not needed
+add frame_1/DoAction.as end
+_root.starttime = 0;
+_root.endtime = 0;
+
+_root.leveltime2 = 0;
+_root.inclevel = false;
+_root.gametime = 0;
+_root.display_time = 1;
+end-patch
+
+# Frame 1 - Mainfunc calculations
+add frame_1/DoAction.as 994
+_root.gametime++;
+if (_root.inclevel) {
+	_root.leveltime2++;
+}
+
+   if(Key.isDown(81) && Key.isDown(16))
+   {
+      display_time = 0;
+   }
+   if(Key.isDown(87) && Key.isDown(16))
+   {
+      display_time = 1;
+   }
+   if(Key.isDown(69) && Key.isDown(16))
+   {
+      display_time = 2;
+   }
+   
+      if(display_time == 1)
+   {
+      this.player_name = String(_root.leveltime2);
+   }
+   else if(display_time == 2)
+   {
+      this.player_name = String(_root.gametime);
+   }
+   else
+   {
+      this.player_name = String(points);
+   }
+   
+   
+   _root.write(this.player_name,_root.hud,10,6);
+end-patch
