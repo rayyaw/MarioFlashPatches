@@ -104,6 +104,11 @@ _root.gametime = 0;
 _root.starttime = new Date();
 end-patch
 
+add DefineSprite_192/frame_6/DoAction.as 79
+_root.gametime = 0;
+_root.starttime = new Date();
+end-patch
+
 # Final time after Bowser
 remove DefineSprite_1109/frame_1/DoAction.as 3-5
 

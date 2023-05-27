@@ -1,3 +1,6 @@
+Build 10 patch notes:
+- Starting as Luigi sets the fullgame timer correctly
+
 Build 9 patch notes:
 - Fullgame hack now always displays fullgame framecount and cannot be switched
 - Improved fullgame time calculation on the end screen
