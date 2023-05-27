@@ -2,7 +2,7 @@
 
 echo "Usage: ./patch-all.sh [build number]"
 
-export PATCHER_PATH="../patcher/flash-patcher.py"
+export PATCHER="../patcher/flash-patcher.py"
 export SWF_FILE_PATH=".."
 
 # Dynamically update the build number
@@ -14,10 +14,12 @@ echo "add frame_1/DoAction.as end" >> noncheat/add-build-number.patch
 echo "_root.build_number = $1;" >> noncheat/add-build-number.patch
 echo "end-patch" >> noncheat/add-build-number.patch
 
-$PATCHER_PATH $SWF_FILE_PATH/SMF_Base_Hack.swf . fullgame.stage SMF-Fullgame-Build-$1.swf
-$PATCHER_PATH $SWF_FILE_PATH/SMF_Base_Hack.swf . level.stage SMF-IL-Build-$1.swf
-$PATCHER_PATH $SWF_FILE_PATH/SMF_Base_Hack.swf . cheat.stage SMF-Cheat-Build-$1.swf
+# Patch all hacks
+$PATCHER $SWF_FILE_PATH/SMF_Base_Hack.swf . fullgame.stage SMF-Fullgame-Build-$1.swf
+$PATCHER $SWF_FILE_PATH/SMF_Base_Hack.swf . level.stage SMF-IL-Build-$1.swf
+$PATCHER $SWF_FILE_PATH/SMF_Base_Hack.swf . cheat.stage SMF-Cheat-Build-$1.swf
 
+# Bundle as a .zip for export
 zip SMF-Hacks-Build-$1 SMF-Fullgame-Build-$1.swf SMF-IL-Build-$1.swf SMF-Cheat-Build-$1.swf patch-notes.txt
 mv SMF-Hacks-Build-$1.zip $SWF_FILE_PATH
 
