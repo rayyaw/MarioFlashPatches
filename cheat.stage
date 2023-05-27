@@ -7,6 +7,7 @@ noncheat/add-build-number.patch
 level/die-gain-lives.patch
 level/z-to-die.patch
 level/level-10-end-stage.patch
+level/speedrun-time-hud.patch
 
 # Exclusive files
 cheat/hud-as-pixel-modulus.patch

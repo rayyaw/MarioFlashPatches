@@ -116,7 +116,7 @@ end-patch
 add DefineSprite_1109/frame_1/DoAction.as 31
 _root.endtime = new Date();
 var _loc4_ = ((_root.endtime.valueOf() - _root.starttime.valueOf()) / 1000);
-_loc4_ = _root.gametime / 26; //Math.floor((_loc4_-0.0384615384615)*26) / 26; // subtract a frame, then round down to the frame
+_loc4_ = Math.floor((_loc4_-0.0384615384615)*26) / 26; // subtract a frame, then round down to the frame
 var _loc5_ = Math.floor(_loc4_ / 60);
 _loc4_ -= _loc5_ * 60;
 var padded_string = String(_loc4_);
@@ -138,41 +138,4 @@ _root.leveltime2 = 0;
 _root.inclevel = false;
 _root.gametime = 0;
 _root.display_time = 1;
-end-patch
-
-# Frame 1 - Mainfunc calculations
-add frame_1/DoAction.as 994
-_root.gametime++;
-if (_root.inclevel) {
-	_root.leveltime2++;
-}
-
-   if(Key.isDown(81) && Key.isDown(16))
-   {
-      display_time = 0;
-   }
-   if(Key.isDown(87) && Key.isDown(16))
-   {
-      display_time = 1;
-   }
-   if(Key.isDown(69) && Key.isDown(16))
-   {
-      display_time = 2;
-   }
-   
-      if(display_time == 1)
-   {
-      this.player_name = String(_root.leveltime2);
-   }
-   else if(display_time == 2)
-   {
-      this.player_name = String(_root.gametime);
-   }
-   else
-   {
-      this.player_name = String(points);
-   }
-   
-   
-   _root.write(this.player_name,_root.hud,10,6);
 end-patch

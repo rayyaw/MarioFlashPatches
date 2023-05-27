@@ -1,4 +1,4 @@
 # Add the build number to the hack. Required for speedrun timer and input display.
 add frame_1/DoAction.as end
-_root.build_number = 8;
+_root.build_number = 9;
 end-patch

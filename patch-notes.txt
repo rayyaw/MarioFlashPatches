@@ -1,5 +1,6 @@
-TODO:
-- Make the fullgame timer authoritative
+Build 9 patch notes:
+- Fullgame hack now always displays fullgame framecount and cannot be switched
+- Improved fullgame time calculation on the end screen
 
 Build 8 patch notes:
 - Minor code improvements (there is only one build number and it can be updated dynamically)

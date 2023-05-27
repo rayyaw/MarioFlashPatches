@@ -1,0 +1,10 @@
+# Prerequisites: track-speedrun-time.patch
+# Frame 1 - Mainfunc calculations
+add frame_1/DoAction.as 994
+_root.gametime++;
+if (_root.inclevel) {
+	_root.leveltime2++;
+}
+this.player_name = String(_root.gametime);   
+_root.write(this.player_name,_root.hud,10,6);
+end-patch

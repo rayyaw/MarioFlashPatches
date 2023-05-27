@@ -1,0 +1,37 @@
+# Prerequisites: track-speedrun-time.patch
+# Frame 1 - Mainfunc calculations
+add frame_1/DoAction.as 994
+_root.gametime++;
+if (_root.inclevel) {
+	_root.leveltime2++;
+}
+
+   if(Key.isDown(81) && Key.isDown(16))
+   {
+      display_time = 0;
+   }
+   if(Key.isDown(87) && Key.isDown(16))
+   {
+      display_time = 1;
+   }
+   if(Key.isDown(69) && Key.isDown(16))
+   {
+      display_time = 2;
+   }
+   
+      if(display_time == 1)
+   {
+      this.player_name = String(_root.leveltime2);
+   }
+   else if(display_time == 2)
+   {
+      this.player_name = String(_root.gametime);
+   }
+   else
+   {
+      this.player_name = String(points);
+   }
+   
+   
+   _root.write(this.player_name,_root.hud,10,6);
+end-patch
