@@ -99,12 +99,12 @@ _root.inclevel = false;
 end-patch
 
 # Game time setup
-add DefineSprite_192/frame_6/DoAction.as 36
+add DefineSprite_192/frame_6/DoAction.as 84
 _root.gametime = 0;
 _root.starttime = new Date();
 end-patch
 
-add DefineSprite_192/frame_6/DoAction.as 79
+add DefineSprite_192/frame_6/DoAction.as 41
 _root.gametime = 0;
 _root.starttime = new Date();
 end-patch
