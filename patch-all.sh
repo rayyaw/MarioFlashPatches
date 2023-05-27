@@ -15,9 +15,9 @@ echo "_root.build_number = $1;" >> noncheat/add-build-number.patch
 echo "end-patch" >> noncheat/add-build-number.patch
 
 # Patch all hacks
-$PATCHER $SWF_FILE_PATH/SMF_Base_Hack.swf . fullgame.stage SMF-Fullgame-Build-$1.swf
-$PATCHER $SWF_FILE_PATH/SMF_Base_Hack.swf . level.stage SMF-IL-Build-$1.swf
-$PATCHER $SWF_FILE_PATH/SMF_Base_Hack.swf . cheat.stage SMF-Cheat-Build-$1.swf
+$PATCHER --inputswf $SWF_FILE_PATH/SMF_Base_Hack.swf --folder . --stagefile fullgame.stage --outputswf SMF-Fullgame-Build-$1.swf
+$PATCHER --inputswf $SWF_FILE_PATH/SMF_Base_Hack.swf --folder . --stagefile level.stage --outputswf SMF-IL-Build-$1.swf
+$PATCHER --inputswf $SWF_FILE_PATH/SMF_Base_Hack.swf --folder . --stagefile cheat.stage --outputswf SMF-Cheat-Build-$1.swf
 
 # Bundle as a .zip for export
 zip SMF-Hacks-Build-$1 SMF-Fullgame-Build-$1.swf SMF-IL-Build-$1.swf SMF-Cheat-Build-$1.swf patch-notes.txt
