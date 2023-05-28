@@ -3,6 +3,7 @@
 # Should be applied BEFORE the "load state on death" patch
 
 add frame_1/DoAction.as 994
+begin-patch
 var savestate_status = death_pipe + "S" + ex_value + "___"
 
 if (!input_display) {
@@ -20,5 +21,6 @@ if(Key.isDown(82) && Key.isDown(16))
 end-patch
 
 add frame_1/DoAction.as end
+begin-patch
 input_display = false;
 end-patch

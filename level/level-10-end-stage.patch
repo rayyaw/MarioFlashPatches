@@ -3,5 +3,6 @@
 remove DefineSprite_1109/frame_1/DoAction.as 54-54
 
 add DefineSprite_1109/frame_1/DoAction.as 53
+begin-patch
 _root.Level_Clear(1);
 end-patch

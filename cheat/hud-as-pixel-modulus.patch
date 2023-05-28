@@ -3,6 +3,7 @@
 # HUD shows a C in the life count
 
 add frame_1/DoAction.as 994
+begin-patch
 var _loc3_ = player._x - this.level._x;
 aff(_loc3_ % 6,2,this.hud.coin);
 aff(_loc3_ % 20,3,this.hud.life);

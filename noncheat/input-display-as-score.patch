@@ -2,6 +2,7 @@
 # Should be applied before any patches that modify functions before onEnterFrame
 
 add frame_1/DoAction.as 994
+begin-patch
    if(Key.isDown(32))
    {
       this.space = "S";
@@ -50,5 +51,6 @@ add frame_1/DoAction.as 994
 end-patch
 
 add frame_1/DoAction.as end
+begin-patch
 input_display = true;
 end-patch

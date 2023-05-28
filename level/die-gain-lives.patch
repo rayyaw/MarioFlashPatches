@@ -2,5 +2,6 @@
 remove frame_1/DoAction.as 470-470
 
 add frame_1/DoAction.as 469
+begin-patch
 aff(++lives, 2, this.hud.life);
 end-patch

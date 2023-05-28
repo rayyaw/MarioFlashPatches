@@ -1,5 +1,6 @@
 # Add savestates to SMF
 add frame_1/DoAction.as 994
+begin-patch
       if(Key.isDown(192) && Key.isDown(16) && backtick_pressed == false)
       {
          if(_root.suit == "smallsuit")
@@ -48,6 +49,7 @@ add frame_1/DoAction.as 994
 end-patch
 
 add frame_1/DoAction.as end
+begin-patch
 backtick_pressed = false;
 _root.saved_level = "level 6";
 _root.saved_x = 0;

@@ -1,6 +1,7 @@
 # Add savestate presets
 # Also add the DS8___ bar
 add frame_1/DoAction.as 994
+begin-patch
 if(Key.isDown(49) && Key.isDown(16))
       {
          ex_value = "1";
@@ -84,5 +85,6 @@ if(Key.isDown(49) && Key.isDown(16))
 end-patch
 
 add frame_1/DoAction.as end
+begin-patch
 ex_value = "_";
 end-patch

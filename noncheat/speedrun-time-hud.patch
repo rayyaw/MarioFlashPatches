@@ -1,6 +1,7 @@
 # Prerequisites: track-speedrun-time.patch
 # Frame 1 - Mainfunc calculations
 add frame_1/DoAction.as 994
+begin-patch
 _root.gametime++;
 if (_root.inclevel) {
 	_root.leveltime2++;

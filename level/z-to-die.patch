@@ -1,4 +1,5 @@
 add frame_1/DoAction.as 994
+begin-patch
       if(Key.isDown(90))
       {
          if(z_pressed == false)
@@ -15,5 +16,6 @@ add frame_1/DoAction.as 994
 end-patch
 
 add frame_1/DoAction.as end
+begin-patch
 z_pressed = false
 end-patch

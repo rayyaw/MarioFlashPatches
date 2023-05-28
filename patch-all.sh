@@ -11,6 +11,7 @@ rm -rf noncheat/add-build-number.patch
 touch noncheat/add-build-number.patch
 echo "# Add the build number to the hack. Required for speedrun timer and input display." >> noncheat/add-build-number.patch
 echo "add frame_1/DoAction.as end" >> noncheat/add-build-number.patch
+echo "begin-patch" >> noncheat/add-build-number.patch
 echo "_root.build_number = $1;" >> noncheat/add-build-number.patch
 echo "end-patch" >> noncheat/add-build-number.patch
 
