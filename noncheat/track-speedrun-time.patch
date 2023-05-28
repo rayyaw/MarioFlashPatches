@@ -9,6 +9,13 @@ begin-patch
 _root.inclevel = true;
 end-patch
 
+# Handle the IL timer in every level
+add DefineSprite_976_Fade_in(1)/frame_27/DoAction.as 0
+begin-patch
+_root.inclevel = false;
+_root.leveltime2 = 1;
+end-patch
+
 add DefineSprite_1077_Level 1/frame_1/DoAction.as 9
 add DefineSprite_1078_Level 2/frame_1/DoAction.as 9
 add DefineSprite_1079_Level 3/frame_1/DoAction.as 9
@@ -28,14 +35,10 @@ add DefineSprite_1080_level 4/frame_1/DoAction.as 3
 add DefineSprite_1081_level 5/frame_1/DoAction.as 3
 add DefineSprite_1082_level 6/frame_1/DoAction.as 3
 add DefineSprite_1076_Level 7/frame_1/DoAction.as 3
+add DefineSprite_1057_Level 8/frame_1/DoAction.as 3
 add DefineSprite_1083_Level 9/frame_1/DoAction.as 3
 begin-patch
 _root.leveltime2 = 1;
-_root.inclevel = true;
-end-patch
-
-add DefineSprite_1057_Level 8/frame_1/DoAction.as 3
-begin-patch
 _root.inclevel = true;
 end-patch
 
@@ -49,21 +52,8 @@ if (_root.leveltime2 == 1) {
 _root.inclevel = true;
 end-patch
 
-# Handle the IL timer in every level
-add DefineSprite_976_Fade_in(1)/frame_27/DoAction.as 0
-begin-patch
-_root.inclevel = false;
-_root.leveltime2 = 1;
-end-patch
-
-
 # Game time setup
 add DefineSprite_192/frame_6/DoAction.as 84
-begin-patch
-_root.gametime = 0;
-_root.starttime = new Date();
-end-patch
-
 add DefineSprite_192/frame_6/DoAction.as 41
 begin-patch
 _root.gametime = 0;
@@ -97,7 +87,6 @@ text = _root.text1;
 end-patch
 
 # Frame 1 timer setups
-# FIXME - Remove starttime and endtime if not needed
 add frame_1/DoAction.as end
 begin-patch
 _root.starttime = 0;
