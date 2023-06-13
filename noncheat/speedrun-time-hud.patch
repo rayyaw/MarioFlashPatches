@@ -1,4 +1,77 @@
 # Prerequisites: track-speedrun-time.patch
+
+# Add UUID to the run to make splicing more difficult
+add frame_1/DoAction.as end
+begin-patch
+
+function generateRandomChar() {
+    var numberChar = Math.floor(Math.random() * 26);
+    
+    if (numberChar < 1) {
+        return "A"
+    } else if (numberChar < 2) {
+        return "B"
+    } else if (numberChar < 3) {
+        return "C"
+    } else if (numberChar < 4) {
+        return "D"
+    } else if (numberChar < 5) {
+        return "E"
+    } else if (numberChar < 6) {
+        return "F"
+    } else if (numberChar < 7) {
+        return "G"
+    } else if (numberChar < 8) {
+        return "H"
+    } else if (numberChar < 9) {
+        return "I"
+    } else if (numberChar < 10) {
+        return "J"
+    } else if (numberChar < 11) {
+        return "K"
+    } else if (numberChar < 12) {
+        return "L"
+    } else if (numberChar < 13) {
+        return "M"
+    } else if (numberChar < 14) {
+        return "N"
+    } else if (numberChar < 15) {
+        return "O"
+    } else if (numberChar < 16) {
+        return "P"
+    } else if (numberChar < 17) {
+        return "Q"
+    } else if (numberChar < 18) {
+        return "R"
+    } else if (numberChar < 19) {
+        return "S"
+    } else if (numberChar < 20) {
+        return "T"
+    } else if (numberChar < 21) {
+        return "U"
+    } else if (numberChar < 22) {
+        return "V"
+    } else if (numberChar < 23) {
+        return "W"
+    } else if (numberChar < 24) {
+        return "X"
+    } else if (numberChar < 25) {
+        return "Y"
+    } else {
+        return "Z"
+    }
+    
+}
+
+_root.runId = generateRandomChar() + generateRandomChar() + generateRandomChar() + " ";
+end-patch
+
+
+add DefineSprite_1109/frame_1/DoAction.as 31
+begin-patch
+_root.runId = generateRandomChar() + generateRandomChar() + generateRandomChar() + " ";
+end-patch
+
 # Frame 1 - Mainfunc calculations
 add frame_1/DoAction.as 994
 begin-patch
@@ -6,6 +79,6 @@ _root.gametime++;
 if (_root.inclevel) {
 	_root.leveltime2++;
 }
-this.player_name = String(_root.gametime);   
+this.player_name = _root.runId + String(_root.gametime);   
 _root.write(this.player_name,_root.hud,10,6);
 end-patch

@@ -1,3 +1,6 @@
+Build 12 patch notes:
+- Add additional anti-cheat features
+
 Build 10 patch notes:
 - Starting as Luigi sets the fullgame timer correctly
 
