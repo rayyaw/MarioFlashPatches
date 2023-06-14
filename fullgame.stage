@@ -4,7 +4,7 @@ noncheat/track-speedrun-time.patch
 noncheat/add-build-number.patch
 
 # Fullgame hack only
-noncheat/remove-cheat-menu.patch
+# noncheat/remove-cheat-menu.patch
 noncheat/speedrun-time-hud.patch
 
 # This line must be last

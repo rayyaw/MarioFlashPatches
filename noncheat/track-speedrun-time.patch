@@ -81,7 +81,7 @@ var padded_string = String(_loc4_);
 if (padded_string.charAt(1) == '.') {
 	padded_string = "0" + padded_string;
 }
-_root.text1 = "Full game time: " + String(_loc5_) + ":" + padded_string + " &&IL Time: " + String(_root.leveltime2) + "&&Game Framecount: " + String(_root.gametime);
+_root.text1 = "Full game time: " + String(_loc5_) + ":" + padded_string + " &&IL Time: " + String(_root.leveltime2) + "&&Game Framecount: " + String(_root.gametime) + " -------";
 _root.curtext = _root.text1;
 text = _root.text1;
 end-patch

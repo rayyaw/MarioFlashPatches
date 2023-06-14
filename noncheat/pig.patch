@@ -4,5 +4,5 @@ add frame_1/DoAction.as 11
 add frame_1/DoAction.as end
 begin-patch
 _root.time = undefined;
-_root.runId = generateRandomChar() + generateRandomChar() + generateRandomChar() + " ";
+_root.runId = generateRunId();
 end-patch

@@ -5,71 +5,43 @@ add frame_1/DoAction.as end
 begin-patch
 
 function generateRandomChar() {
-    var numberChar = Math.floor(Math.random() * 26);
+    var numberChar = Math.floor(Math.random() * 10);
     
     if (numberChar < 1) {
-        return "A"
+        return "0";
     } else if (numberChar < 2) {
-        return "B"
+        return "2";
     } else if (numberChar < 3) {
-        return "C"
+        return "3";
     } else if (numberChar < 4) {
-        return "D"
+        return "4";
     } else if (numberChar < 5) {
-        return "E"
+        return "5";
     } else if (numberChar < 6) {
-        return "F"
+        return "6";
     } else if (numberChar < 7) {
-        return "G"
+        return "7";
     } else if (numberChar < 8) {
-        return "H"
+        return "0";
     } else if (numberChar < 9) {
-        return "I"
-    } else if (numberChar < 10) {
-        return "J"
-    } else if (numberChar < 11) {
-        return "K"
-    } else if (numberChar < 12) {
-        return "L"
-    } else if (numberChar < 13) {
-        return "M"
-    } else if (numberChar < 14) {
-        return "N"
-    } else if (numberChar < 15) {
-        return "O"
-    } else if (numberChar < 16) {
-        return "P"
-    } else if (numberChar < 17) {
-        return "Q"
-    } else if (numberChar < 18) {
-        return "R"
-    } else if (numberChar < 19) {
-        return "S"
-    } else if (numberChar < 20) {
-        return "T"
-    } else if (numberChar < 21) {
-        return "U"
-    } else if (numberChar < 22) {
-        return "V"
-    } else if (numberChar < 23) {
-        return "W"
-    } else if (numberChar < 24) {
-        return "X"
-    } else if (numberChar < 25) {
-        return "Y"
+        return "8";
     } else {
-        return "Z"
+        return "9";
     }
     
 }
 
-_root.runId = generateRandomChar() + generateRandomChar() + generateRandomChar() + " ";
+function generateRunId() {
+    return generateRandomChar() + generateRandomChar() + generateRandomChar() + generateRandomChar() + " ";
+}
+
+_root.runId = generateRunId();
 end-patch
 
 
 add DefineSprite_1109/frame_1/DoAction.as 31
 begin-patch
-_root.runId = generateRandomChar() + generateRandomChar() + generateRandomChar() + " ";
+_root.runId = generateRunId();
 end-patch
 
 # Frame 1 - Mainfunc calculations
