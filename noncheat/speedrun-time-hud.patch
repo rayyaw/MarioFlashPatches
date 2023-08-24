@@ -2,6 +2,7 @@
 
 # Add UUID to the run to make splicing more difficult
 add frame_1/DoAction.as end
+add DefineSprite_1109/frame_1/DoAction.as end
 begin-patch
 
 function generateRandomChar() {

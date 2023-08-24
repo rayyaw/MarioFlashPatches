@@ -1,8 +1,7 @@
 # Patch for PIG
 # This should be applied LAST as it will overwrite some stuff earlier in the SWF
-add frame_1/DoAction.as 11
 add frame_1/DoAction.as end
+add frame_1/DoAction.as 11
 begin-patch
 _root.time = undefined;
-_root.runId = generateRunId();
 end-patch

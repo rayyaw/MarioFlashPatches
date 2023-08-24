@@ -74,7 +74,6 @@ add DefineSprite_1109/frame_1/DoAction.as 31
 begin-patch
 _root.endtime = new Date();
 var _loc4_ = ((_root.endtime.valueOf() - _root.starttime.valueOf()) / 1000);
-_loc4_ = Math.floor((_loc4_-0.0384615384615)*26) / 26; // subtract a frame, then round down to the frame
 var _loc5_ = Math.floor(_loc4_ / 60);
 _loc4_ -= _loc5_ * 60;
 var padded_string = String(_loc4_);

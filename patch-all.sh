@@ -2,7 +2,7 @@
 
 echo "Usage: ./patch-all.sh [build number]"
 
-export PATCHER="../patcher/flash-patcher.py"
+export PATCHER="flash-patcher"
 export SWF_FILE_PATH=".."
 
 # Dynamically update the build number

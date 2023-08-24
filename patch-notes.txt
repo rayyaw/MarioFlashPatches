@@ -1,3 +1,7 @@
+Build 16 patch notes:
+- Fix PIG patch on control-R
+- Don't round fullgame time to the nearest frame
+
 Build 12 patch notes:
 - Add additional anti-cheat features
 
