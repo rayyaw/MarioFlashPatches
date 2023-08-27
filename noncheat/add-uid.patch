@@ -2,7 +2,7 @@
 
 # Add UUID to the run to make splicing more difficult
 add frame_1/DoAction.as end
-add DefineSprite_1109/frame_1/DoAction.as end
+add DefineSprite_192/frame_6/DoAction.as end
 begin-patch
 
 function generateRandomChar() {
@@ -35,14 +35,6 @@ function generateRandomChar() {
 function generateRunId() {
     return generateRandomChar() + generateRandomChar() + generateRandomChar() + generateRandomChar() + " ";
 }
-
-_root.runId = generateRunId();
-end-patch
-
-
-add DefineSprite_1109/frame_1/DoAction.as 31
-begin-patch
-_root.runId = generateRunId();
 end-patch
 
 # Frame 1 - Mainfunc calculations
@@ -54,4 +46,16 @@ if (_root.inclevel) {
 }
 this.player_name = _root.runId + String(_root.gametime);   
 _root.write(this.player_name,_root.hud,10,6);
+end-patch
+
+# UUID reset
+add DefineSprite_192/frame_6/DoAction.as 86
+add DefineSprite_192/frame_6/DoAction.as 41
+begin-patch
+_root.runId = generateRunId();
+end-patch
+
+add frame_1/DoAction.as end
+begin-patch
+_root.runId = generateRunId();
 end-patch

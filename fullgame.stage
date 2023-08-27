@@ -5,7 +5,7 @@ noncheat/add-build-number.patch
 
 # Fullgame hack only
 # noncheat/remove-cheat-menu.patch
-noncheat/speedrun-time-hud.patch
+noncheat/add-uid.patch
 
 # This line must be last
 noncheat/pig.patch
