@@ -31,7 +31,6 @@ add DefineSprite_1076_Level 7/frame_1/DoAction.as 3
 add DefineSprite_1057_Level 8/frame_1/DoAction.as 3
 add DefineSprite_1083_Level 9/frame_1/DoAction.as 3
 begin-patch
-_root.leveltime2 = 1;
 _root.inclevel = true;
 end-patch
 
