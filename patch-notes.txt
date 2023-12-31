@@ -1,3 +1,7 @@
+Build 20 patch notes:
+- Upgrade to Flash Patcher 5.0.0
+- Fix the fullgame hack runid not resetting when selecting Luigi after a fullgame run is completed
+
 Build 16 patch notes:
 - Fix PIG patch on control-R
 - Don't round fullgame time to the nearest frame

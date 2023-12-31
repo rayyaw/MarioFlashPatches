@@ -1,14 +1,6 @@
 # SMF Patch - Track the fullgame and IL times, and display them in the name and end screen
 # Should be applied after any patches that only modify onEnterFrame.
 
-# FIXME - L10 needs -2f of offset
-# Also fullgame offset = 1? 1 per level? Something else?
-add DefineSprite_1077_Level 1/frame_1/DoAction.as 3
-begin-patch
-// this lines up the line numbers
-_root.inclevel = true;
-end-patch
-
 # Handle the IL timer in every level
 add DefineSprite_976_Fade_in(1)/frame_27/DoAction.as 0
 begin-patch
@@ -29,6 +21,7 @@ begin-patch
 _root.inclevel = false;
 end-patch
 
+add DefineSprite_1077_Level 1/frame_1/DoAction.as 3
 add DefineSprite_1078_Level 2/frame_1/DoAction.as 3
 add DefineSprite_1079_Level 3/frame_1/DoAction.as 3
 add DefineSprite_1080_level 4/frame_1/DoAction.as 3

@@ -4,7 +4,6 @@
 add frame_1/DoAction.as end
 add DefineSprite_192/frame_6/DoAction.as end
 begin-patch
-
 function generateRandomChar() {
     var numberChar = Math.floor(Math.random() * 10);
     
