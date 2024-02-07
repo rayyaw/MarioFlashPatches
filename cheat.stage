@@ -1,21 +1,21 @@
 # SMF Cheat Hack modifications
-exec-patcher noncheat/input_display_as_score.patch 
-exec-patcher noncheat/track_speedrun_time.patch
-exec-patcher noncheat/add_build_number.patch
+apply-patch noncheat/input_display_as_score.patch 
+apply-patch noncheat/track_speedrun_time.patch
+apply-patch noncheat/add_build_number.patch
 
 # Files common to the IL and Cheat hacks
-exec-patcher level/die_gain_lives.patch
-exec-patcher level/z_to_die.patch
-exec-patcher level/level_10_end_stage.patch
-exec-patcher level/speedrun_time_hud.patch
+apply-patch level/die_gain_lives.patch
+apply-patch level/z_to_die.patch
+apply-patch level/level_10_end_stage.patch
+apply-patch level/speedrun_time_hud.patch
 
 # Exclusive files
-exec-patcher cheat/hud_as_pixel_modulus.patch
-exec-patcher cheat/powerup_state_selector.patch
-exec-patcher cheat/savestates.patch
-exec-patcher cheat/savestate_presets.patch
-exec-patcher cheat/savestate_status_bar.patch
-exec-patcher cheat/load_state_on_death.patch
+apply-patch cheat/hud_as_pixel_modulus.patch
+apply-patch cheat/powerup_state_selector.patch
+apply-patch cheat/savestates.patch
+apply-patch cheat/savestate_presets.patch
+apply-patch cheat/savestate_status_bar.patch
+apply-patch cheat/load_state_on_death.patch
 
 # This line must be last
-exec-patcher noncheat/pig.patch
+apply-patch noncheat/pig.patch
