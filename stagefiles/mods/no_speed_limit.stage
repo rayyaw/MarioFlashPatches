@@ -1,0 +1,10 @@
+# SMF Fullgame Hack modifications
+apply-patch noncheat/input_display_as_score.patch
+apply-patch noncheat/track_speedrun_time.patch
+apply-patch noncheat/add_build_number.patch
+
+# Fullgame hack only
+apply-patch noncheat/add_uid.patch
+
+# No Speed Limit mod
+apply-patch mods/no_speed_limit.patch
