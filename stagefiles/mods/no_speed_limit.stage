@@ -8,3 +8,5 @@ apply-patch noncheat/add_uid.patch
 
 # No Speed Limit mod
 apply-patch mods/no_speed_limit.patch
+apply-patch mods/m_display.patch
+
