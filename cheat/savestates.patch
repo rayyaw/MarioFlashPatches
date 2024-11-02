@@ -52,10 +52,10 @@ begin-patch
 _root.current_level = "koopa castle";
 end-patch
 
-#add DefineSprite_1085_koopa_castle_2/frame_1/DoAction.as 3
-#begin-patch
-#_root.current_level = "level 2";
-#end-patch
+add DefineSprite_1085_koopa castle2/frame_1/DoAction.as 3
+begin-patch
+_root.current_level = "koopa castle2";
+end-patch
 
 # Main savestate logic
 add frame_1/DoAction.as 994

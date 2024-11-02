@@ -1,4 +1,4 @@
-Build X patch notes:
+Build 24 patch notes:
 - Upgrade to Flash Patcher 6
 
 Fullgame hack improvements:
