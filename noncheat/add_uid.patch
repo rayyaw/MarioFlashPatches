@@ -43,7 +43,10 @@ _root.gametime++;
 if (_root.inclevel) {
 	_root.leveltime2++;
 }
-this.player_name = _root.runId + String(_root.gametime);   
+
+gametime_seconds = Math.floor(_root.gametime / 26);
+
+this.player_name = _root.runId + String(gametime_seconds);   
 _root.write(this.player_name,_root.hud,10,6);
 end-patch
 

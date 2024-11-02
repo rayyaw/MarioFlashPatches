@@ -1,4 +1,63 @@
 # Add savestates to SMF
+
+# Required for the game to know what level it's in
+add DefineSprite_1077_Level 1/frame_1/DoAction.as 3
+begin-patch
+_root.current_level = "level 1";
+end-patch
+
+
+add DefineSprite_1078_Level 2/frame_1/DoAction.as 3
+begin-patch
+_root.current_level = "level 2";
+end-patch
+
+add DefineSprite_1079_Level 3/frame_1/DoAction.as 3
+begin-patch
+_root.current_level = "level 3";
+end-patch
+
+add DefineSprite_1080_level 4/frame_1/DoAction.as 3
+begin-patch
+_root.current_level = "level 4";
+end-patch
+
+add DefineSprite_1081_level 5/frame_1/DoAction.as 3
+begin-patch
+_root.current_level = "level 5";
+end-patch
+
+add DefineSprite_1082_level 6/frame_1/DoAction.as 3
+begin-patch
+_root.current_level = "level 6";
+end-patch
+
+add DefineSprite_1076_Level 7/frame_1/DoAction.as 3
+begin-patch
+_root.current_level = "level 7";
+end-patch
+
+add DefineSprite_1057_Level 8/frame_1/DoAction.as 3
+begin-patch
+_root.current_level = "level 8";
+end-patch
+
+add DefineSprite_1083_Level 9/frame_1/DoAction.as 3
+begin-patch
+_root.current_level = "level 9";
+end-patch
+
+add DefineSprite_1084_koopa castle/frame_1/DoAction.as 3
+begin-patch
+_root.current_level = "koopa castle";
+end-patch
+
+#add DefineSprite_1085_koopa_castle_2/frame_1/DoAction.as 3
+#begin-patch
+#_root.current_level = "level 2";
+#end-patch
+
+# Main savestate logic
 add frame_1/DoAction.as 994
 begin-patch
       if(Key.isDown(192) && Key.isDown(16) && backtick_pressed == false)

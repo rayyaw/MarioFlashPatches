@@ -58,7 +58,7 @@ remove DefineSprite_1109/frame_1/DoAction.as 3-5
 add DefineSprite_1109/frame_1/DoAction.as 2
 begin-patch
 text1="";
-text2="Hack made by RileyTech &&Playtesting by upelly &&Build Number " + _root.build_number + " && Made with Patches";
+text2="Hack made by RileyTech &&Playtesesting by upelly &&and IcelandBall && Made with Patches";
 text3="Hack made by RileyTech &&Build Number " + _root.build_number + " && Made with Patches";
 end-patch
 

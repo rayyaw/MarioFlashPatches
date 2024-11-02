@@ -3,7 +3,7 @@
 echo "Usage: ./patch-all.sh [build number]"
 
 export PATCHER="flash-patcher"
-export SWF_FILE_PATH=".."
+export SWF_FILE_PATH="."
 
 # Dynamically update the build number
 rm -rf noncheat/add-build-number.patch

@@ -1,3 +1,13 @@
+Build X patch notes:
+- Upgrade to Flash Patcher 6
+
+Fullgame hack improvements:
+- Change the frame counter to a second counter to decrease lag
+- Add Iceland as contributing playtester in the credits
+
+Cheat hack improvements:
+- Fix savestates
+
 Build 20 patch notes:
 - Upgrade to Flash Patcher 5.0.0
 - Fix the fullgame hack runid not resetting when selecting Luigi after a fullgame run is completed
