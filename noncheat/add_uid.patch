@@ -47,7 +47,10 @@ if (_root.inclevel) {
 gametime_seconds = Math.floor(_root.gametime / 26);
 
 this.player_name = _root.runId + String(gametime_seconds);   
-_root.write(this.player_name,_root.hud,10,6);
+
+if (_root.gametime < 50 || _root.gametime % 26 == 0) {
+	_root.write(this.player_name,_root.hud,10,6);
+}
 end-patch
 
 # UUID reset
