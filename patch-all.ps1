@@ -3,15 +3,13 @@ param (
     [string]$BuildNumber
 )
 
+$ErrorActionPreference = 'Stop'
+Set-StrictMode -Version Latest
+
 Write-Host "Patching with build number: $BuildNumber"
 
 $PATCHER = "flash-patcher"
 $SWF_FILE_PATH = "."
-
-# Ensure noncheat directory exists
-if (-not (Test-Path "noncheat")) {
-    New-Item -ItemType Directory -Path "noncheat" | Out-Null
-}
 
 # Create the patch file dynamically
 $patchFile = "noncheat\add_build_number.patch"
