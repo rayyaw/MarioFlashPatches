@@ -25,9 +25,8 @@ $PATCHER --inputswf $SWF_FILE_PATH/SMF_Base_Hack.swf --folder . --stagefile stag
 zip SMF-Hacks-Build-$1 SMF-Fullgame-Build-$1.swf SMF-IL-Build-$1.swf SMF-Cheat-Build-$1.swf patch-notes.txt
 
 if [ "$SWF_FILE_PATH" != "." ]; then
-    mv SMF-Hacks-Build-$1.zip "$SWF_FILE_PATH"
+    mv SMF-Hacks-Build-$1.zip $SWF_FILE_PATH
 fi
-mv SMF-Hacks-Build-$1.zip $SWF_FILE_PATH
 
 rm SMF-Cheat-Build-$1.swf
 rm SMF-IL-Build-$1.swf
