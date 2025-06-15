@@ -25,8 +25,19 @@ end-patch
 
 # Patch all hacks
 & $PATCHER --inputswf "$SWF_FILE_PATH\SMF_Base_Hack.swf" --folder . --stagefile "stagefiles/fullgame.stage" --outputswf "SMF-Fullgame-Build-$BuildNumber.swf"
+if ($LASTEXITCODE -ne 0) {
+    throw "flash-patcher failed on fullgame.stage with exit code $LASTEXITCODE"
+}
+
 & $PATCHER --inputswf "$SWF_FILE_PATH\SMF_Base_Hack.swf" --folder . --stagefile "stagefiles/level.stage" --outputswf "SMF-IL-Build-$BuildNumber.swf"
+if ($LASTEXITCODE -ne 0) {
+    throw "flash-patcher failed on level.stage with exit code $LASTEXITCODE"
+}
+
 & $PATCHER --inputswf "$SWF_FILE_PATH\SMF_Base_Hack.swf" --folder . --stagefile "stagefiles/cheat.stage" --outputswf "SMF-Cheat-Build-$BuildNumber.swf"
+if ($LASTEXITCODE -ne 0) {
+    throw "flash-patcher failed on cheat.stage with exit code $LASTEXITCODE"
+}
 
 # Zip the results
 $zipName = "SMF-Hacks-Build-$BuildNumber.zip"
