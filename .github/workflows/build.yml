@@ -21,9 +21,11 @@ jobs:
         java-version: '21'
     - name: Install FFDec
       run: |
-        echo -e "\nInstalling FFDec..."
         wget https://github.com/jindrapetrik/jpexs-decompiler/releases/download/version23.0.1/ffdec_23.0.1.deb
         sudo apt install ./ffdec_23.0.1.deb
+    - name: Download the SMF base hack
+      run: |
+        wget https://marioflashcommunity.github.io/files/smf-hacks/SMF_Base_Hack.swf
     - name: Install Flash Patcher
       run: |
         pip install flash-patcher
