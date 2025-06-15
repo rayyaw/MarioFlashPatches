@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/bash
 set -euo pipefail
 
 echo "Usage: ./patch-all.sh [build number]"
