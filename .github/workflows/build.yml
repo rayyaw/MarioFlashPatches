@@ -1,4 +1,4 @@
-name: Integration Tests
+name: SMF hacks build correctly
 
 on: [pull_request, workflow_dispatch]
 
