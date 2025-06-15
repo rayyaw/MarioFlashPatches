@@ -1,0 +1,32 @@
+name: Integration Tests
+
+on: [pull_request, workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.13"]
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v3
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Set up Java
+      uses: actions/setup-java@v4.0.0
+      with:
+        distribution: 'adopt'
+        java-version: '21'
+    - name: Install FFDec
+      run: |
+        echo -e "\nInstalling FFDec..."
+        wget https://github.com/jindrapetrik/jpexs-decompiler/releases/download/version23.0.1/ffdec_23.0.1.deb
+        sudo apt install ./ffdec_23.0.1.deb
+    - name: Install Flash Patcher
+      run: |
+        pip install flash-patcher
+    - name: Build hack files
+      run: |
+        ./patch-all.sh
