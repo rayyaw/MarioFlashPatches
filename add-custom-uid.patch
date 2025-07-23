@@ -1,0 +1,72 @@
+# Prerequisites: track-speedrun-time.patch
+
+# Add UUID to the run to make splicing more difficult
+add frame_1/DoAction.as end
+add DefineSprite_192/frame_6/DoAction.as end
+begin-patch
+function generateRandomChar() {
+    var numberChar = Math.floor(Math.random() * 10);
+    
+    if (numberChar < 1) {
+        return "0";
+    } else if (numberChar < 2) {
+        return "2";
+    } else if (numberChar < 3) {
+        return "3";
+    } else if (numberChar < 4) {
+        return "4";
+    } else if (numberChar < 5) {
+        return "5";
+    } else if (numberChar < 6) {
+        return "6";
+    } else if (numberChar < 7) {
+        return "7";
+    } else if (numberChar < 8) {
+        return "0";
+    } else if (numberChar < 9) {
+        return "8";
+    } else {
+        return "9";
+    }
+    
+}
+
+function generateRunId() {
+    return generateRandomChar() + generateRandomChar() + generateRandomChar() + generateRandomChar() + " ";
+}
+end-patch
+
+# Frame 1 - Mainfunc calculations
+add frame_1/DoAction.as 994
+begin-patch
+if(cennes < 100)
+{
+   _root.gametime++;
+   if (_root.inclevel) {
+	   _root.leveltime2++;
+   }
+
+   this.player_name = _root.runId + String(gametime);   
+
+   _root.write(this.player_name,_root.hud,10,6);
+
+};
+end-patch
+
+# UUID reset
+add DefineSprite_192/frame_6/DoAction.as 86
+add DefineSprite_192/frame_6/DoAction.as 41
+begin-patch
+_root.runId = generateRunId();
+end-patch
+
+add frame_1/DoAction.as end
+begin-patch
+_root.runId = generateRunId();
+end-patch
+
+add frame_1/DoAction.as 527
+begin-patch
+if(++cennes == 200)
+end-patch
+
