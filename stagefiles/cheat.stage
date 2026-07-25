@@ -8,7 +8,7 @@ apply-patch level/die_gain_lives.patch
 apply-patch level/z_to_die.patch
 apply-patch level/level_10_end_stage.patch
 apply-patch level/speedrun_time_hud.patch
-apply-patch level/map_connected.patch
+apply-patch level/unlock_levels.patch
 
 # Exclusive files
 apply-patch cheat/hud_as_pixel_modulus.patch

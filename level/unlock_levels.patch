@@ -1,0 +1,4 @@
+# Apply "Unlock Levels" code without needing to use C+H
+
+remove DefineSprite_1027/frame_1/DoAction.as 11-11
+remove DefineSprite_1034/frame_1/DoAction.as 9-9

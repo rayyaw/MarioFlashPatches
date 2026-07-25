@@ -1,3 +1,6 @@
+Build 27 patch notes:
+- Turn on Unlock Levels mode on the overworld in IL/Cheat hacks, without needing to select it
+
 Build 24 patch notes:
 - Upgrade to Flash Patcher 6
 
