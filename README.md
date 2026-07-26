@@ -2,6 +2,7 @@
 
 ## Requirements
 
+- FFDec version 23.0.1: https://github.com/jindrapetrik/jpexs-decompiler/releases/tag/version23.0.1 (Later versions will not work)
 - Riley's Flash Patcher: https://github.com/rayyaw/flash-patcher
 - SMF Base Hack: https://marioflashcommunity.github.io/game-downloads
 
