@@ -4,6 +4,7 @@
 # Handle the IL timer in every level
 add DefineSprite_976_Fade_in(1)/frame_27/DoAction.as 0
 begin-patch
+System.setClipboard("you are cool if you noticed this");
 _root.inclevel = false;
 _root.leveltime2 = 1;
 end-patch
@@ -18,6 +19,7 @@ add DefineSprite_1057_Level 8/frame_1/DoAction.as 9
 add DefineSprite_1083_Level 9/frame_1/DoAction.as 10
 add DefineSprite_1103/frame_1/DoAction.as 15
 begin-patch
+System.setClipboard("split");
 _root.inclevel = false;
 end-patch
 
@@ -31,6 +33,7 @@ add DefineSprite_1076_Level 7/frame_1/DoAction.as 3
 add DefineSprite_1057_Level 8/frame_1/DoAction.as 3
 add DefineSprite_1083_Level 9/frame_1/DoAction.as 3
 begin-patch
+System.setClipboard("you are cool if you noticed this");
 _root.inclevel = true;
 end-patch
 
@@ -48,6 +51,7 @@ end-patch
 add DefineSprite_192/frame_6/DoAction.as 84
 add DefineSprite_192/frame_6/DoAction.as 41
 begin-patch
+System.setClipboard("start");
 _root.gametime = 0;
 _root.starttime = new Date();
 end-patch
@@ -64,6 +68,7 @@ end-patch
 
 add DefineSprite_1109/frame_1/DoAction.as 31
 begin-patch
+System.setClipboard("split");
 _root.endtime = new Date();
 var _loc4_ = ((_root.endtime.valueOf() - _root.starttime.valueOf()) / 1000);
 var _loc5_ = Math.floor(_loc4_ / 60);
@@ -84,6 +89,7 @@ _root.starttime = 0;
 _root.endtime = 0;
 
 _root.leveltime2 = 0;
+System.setClipboard("reset");
 _root.inclevel = false;
 _root.gametime = 0;
 _root.display_time = 1;
