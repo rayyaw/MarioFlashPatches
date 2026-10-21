@@ -9,36 +9,36 @@ _root.inclevel = false;
 _root.leveltime2 = 1;
 end-patch
 
-add DefineSprite_1077_Level 1/frame_1/DoAction.as 9
-add DefineSprite_1078_Level 2/frame_1/DoAction.as 9
-add DefineSprite_1079_Level 3/frame_1/DoAction.as 9
-add DefineSprite_1080_level 4/frame_1/DoAction.as 9
-add DefineSprite_1082_level 6/frame_1/DoAction.as 9
-add DefineSprite_1076_Level 7/frame_1/DoAction.as 10
-add DefineSprite_1057_Level 8/frame_1/DoAction.as 9
-add DefineSprite_1083_Level 9/frame_1/DoAction.as 10
-add DefineSprite_1103/frame_1/DoAction.as 15
+add "DefineSprite_1077_Level 1/frame_1/DoAction.as" 9
+add "DefineSprite_1078_Level 2/frame_1/DoAction.as" 9
+add "DefineSprite_1079_Level 3/frame_1/DoAction.as" 9
+add "DefineSprite_1080_level 4/frame_1/DoAction.as" 9
+add "DefineSprite_1082_level 6/frame_1/DoAction.as" 9
+add "DefineSprite_1076_Level 7/frame_1/DoAction.as" 10
+add "DefineSprite_1057_Level 8/frame_1/DoAction.as" 9
+add "DefineSprite_1083_Level 9/frame_1/DoAction.as" 10
+add "DefineSprite_1103/frame_1/DoAction.as" 15
 begin-patch
 System.setClipboard("split");
 _root.inclevel = false;
 end-patch
 
-add DefineSprite_1077_Level 1/frame_1/DoAction.as 3
-add DefineSprite_1078_Level 2/frame_1/DoAction.as 3
-add DefineSprite_1079_Level 3/frame_1/DoAction.as 3
-add DefineSprite_1080_level 4/frame_1/DoAction.as 3
-add DefineSprite_1081_level 5/frame_1/DoAction.as 3
-add DefineSprite_1082_level 6/frame_1/DoAction.as 3
-add DefineSprite_1076_Level 7/frame_1/DoAction.as 3
-add DefineSprite_1057_Level 8/frame_1/DoAction.as 3
-add DefineSprite_1083_Level 9/frame_1/DoAction.as 3
+add "DefineSprite_1077_Level 1/frame_1/DoAction.as" 3
+add "DefineSprite_1078_Level 2/frame_1/DoAction.as" 3
+add "DefineSprite_1079_Level 3/frame_1/DoAction.as" 3
+add "DefineSprite_1080_level 4/frame_1/DoAction.as" 3
+add "DefineSprite_1081_level 5/frame_1/DoAction.as" 3
+add "DefineSprite_1082_level 6/frame_1/DoAction.as" 3
+add "DefineSprite_1076_Level 7/frame_1/DoAction.as" 3
+add "DefineSprite_1057_Level 8/frame_1/DoAction.as" 3
+add "DefineSprite_1083_Level 9/frame_1/DoAction.as" 3
 begin-patch
 System.setClipboard("you are cool if you noticed this");
 _root.inclevel = true;
 end-patch
 
 # Can't use a _root.hasSet flag instead unfortunately - what if we do many ILs without resetting?
-add DefineSprite_1084_koopa castle/frame_1/DoAction.as 3
+add "DefineSprite_1084_koopa castle/frame_1/DoAction.as" 3
 begin-patch
 //_root.leveltime2 = 1;
 if (_root.leveltime2 == 1) {
