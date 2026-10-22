@@ -31,4 +31,4 @@ jobs:
         pip install flash-patcher
     - name: Build hack files
       run: |
-        ./patch-all.sh DEBUG_RUNNER
+        python patch-all.py DEBUG_RUNNER
