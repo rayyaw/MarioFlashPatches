@@ -17,7 +17,14 @@ PATCH_FILE = Path("noncheat/add_build_number.patch")
 STAGE_FILES = Path("stagefiles")
 PATCH_NOTES = Path("patch-notes.txt")
 
-CHECKSUM = "c8b95051a2bc8f90dd44b119bdc1c74e84432e0fde753a66d3c82506bcf147fd435f5645f66679de0d61f1352ca218b52e5ce1f0dbbff1f18b24d16dbd9c1739"
+CHECKSUM = {
+    'SMF-Fullgame-Build-DEBUG_RUNNER.swf': 'b10ff97988c4646d62662a59ee47973f5305fb08d2833ce95f721e4a1d1b92a41e17b2099760e3f06b8c9350340c972ec95475ef0612d0d7cfb81131397e2fd4',
+    'SMF-IL-Build-DEBUG_RUNNER.swf': 'e738e3119becf481415a892751baa1153f33ed392db0eabaf54bf99209025f052dc42aeee720aeca8e25738338bdc08fefbbe57548f90d945364431919c20ae5',
+    'SMF-Cheat-Build-DEBUG_RUNNER.swf': '8b3c89469a40ee885ac9bbbfbb81b9b4f40c169d8e1f5ed5ddb4b003739f8e291e5d369fd5fdbc85aca40db73de2c364d6195ce397c85fcc18de895afab01d63',
+}
+
+global EXIT_CODE
+EXIT_CODE = 0
 
 def run_command(command):
     """Run a command and exit if it fails."""
@@ -63,28 +70,26 @@ def main():
                 "--outputswf", str(output),
             ])
 
-        # Create a reproducible ZIP archive.
-        with zipfile.ZipFile(
-            zip_file,
-            "w",
-            compression=zipfile.ZIP_DEFLATED,
-            compresslevel=9,
-        ) as archive:
-            for path in [*outputs, PATCH_NOTES]:
-                info = zipfile.ZipInfo(
-                    filename=path.name,
-                    date_time=(2020, 1, 1, 0, 0, 0),
-                )
-                info.compress_type = zipfile.ZIP_DEFLATED
-                info.create_system = 3
-                info.external_attr = 0o100644 << 16
+            # Compute the BLAKE2b checksum (equivalent to b2sum).
+            hasher = hashlib.blake2b()
 
-                archive.writestr(
-                    info,
-                    path.read_bytes(),
-                    compress_type=zipfile.ZIP_DEFLATED,
-                    compresslevel=9,
-                )
+            with open(str(output), "rb") as f:
+                for chunk in iter(lambda: f.read(1024 * 1024), b""):
+                    hasher.update(chunk)
+
+            checksum = hasher.hexdigest()
+
+            print(f"{checksum}  {str(output)}")
+
+            if (checksum != CHECKSUM[str(output)]):
+                print("Warning! Checksum did not match expected value!")
+                print("This is fine when developing locally but it will fail the build!")
+                EXIT_CODE = 1
+
+        # Create a reproducible ZIP archive.
+        with zipfile.ZipFile(zip_file, "w") as archive:
+            for path in [*outputs, PATCH_NOTES]:
+                archive.write(path, path.name)
 
         print("All hacks patched")
 
@@ -93,25 +98,10 @@ def main():
         for output in outputs:
             output.unlink(missing_ok=True)
 
-    # Compute the BLAKE2b checksum (equivalent to b2sum).
-    hasher = hashlib.blake2b()
-
-    with zip_file.open("rb") as f:
-        for chunk in iter(lambda: f.read(1024 * 1024), b""):
-            hasher.update(chunk)
-
-    checksum = hasher.hexdigest()
-    print(f"{checksum}  {zip_file}")
-
-    if (checksum != CHECKSUM):
-        print("Warning! Checksum did not match expected value!")
-        print("This is fine when developing locally but it will fail the build!")
-        sys.exit(1)
-
-
 if __name__ == "__main__":
     try:
         main()
+        sys.exit(EXIT_CODE)
     except subprocess.CalledProcessError as exc:
         print(f"Error: command failed with exit code {exc.returncode}", file=sys.stderr)
         sys.exit(exc.returncode)
