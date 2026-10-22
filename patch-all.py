@@ -10,14 +10,14 @@ from pathlib import Path
 
 PATCHER = "flash-patcher"
 SWF_FILE_PATH = Path(".")
-VERSION = 30
+VERSION = "DEBUG_RUNNER"
 
 BASE_SWF = SWF_FILE_PATH / "SMF_Base_Hack.swf"
 PATCH_FILE = Path("noncheat/add_build_number.patch")
 STAGE_FILES = Path("stagefiles")
 PATCH_NOTES = Path("patch-notes.txt")
 
-CHECKSUM = "1fc2f21f69f1e210e0884db1398bebcdfe3612bba7aca97ca48976636486d048b3fa906cbd3325eaeb5dce8449f4db96021f5aca53d8ba0323d61659c3925538"
+CHECKSUM = "c8b95051a2bc8f90dd44b119bdc1c74e84432e0fde753a66d3c82506bcf147fd435f5645f66679de0d61f1352ca218b52e5ce1f0dbbff1f18b24d16dbd9c1739"
 
 def run_command(command):
     """Run a command and exit if it fails."""
